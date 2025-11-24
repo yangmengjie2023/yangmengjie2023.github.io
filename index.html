@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mengjie Yang - Physics Ph.D. Candidate</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- 字体：圆润一点，但保持专业 -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+    .hover-link {
+      transition: color 0.2s;
+    }
+    .hover-link:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
   </style>
 
   <script>
@@ -19,7 +25,7 @@
       theme: {
         extend: {
           colors: {
-            accent: '#0369a1',   // 蓝色强调
+            accent: '#0369a1',
           }
         }
       }
@@ -28,7 +34,6 @@
 </head>
 
 <body class="bg-slate-50 text-slate-800">
-  <!-- 顶部 Header -->
   <header class="border-b border-slate-200 bg-white">
     <div class="max-w-5xl mx-auto px-5 sm:px-6 py-6 sm:py-8">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -37,17 +42,20 @@
             Mengjie Yang
           </h1>
           <p class="mt-1 text-sm sm:text-base text-slate-600">
-            Ph.D. Candidate in Theoretical Physics · National University of Singapore
+            Ph.D. Candidate in Theoretical Physics ·
+            <a href="https://nus.edu.sg/" target="_blank" class="hover-link">National University of Singapore</a>
           </p>
           <p class="mt-1 text-xs text-slate-500">
-            Advisor: Prof. Ching Hua Lee
+            Advisor:
+            <a href="https://www.physics.nus.edu.sg/faculty/lee-ching-hua/" target="_blank" class="hover-link font-medium text-slate-600">
+              Prof. Ching Hua Lee
+            </a>
           </p>
         </div>
 
-        <!-- 联系方式：Email 改为点击复制，不再 mailto；去掉 CV -->
         <div class="flex flex-col items-end gap-2 text-sm">
           <div class="flex flex-wrap gap-2 justify-end">
-            <!-- 复制 email 按钮 -->
+            <!-- Email 按钮：不显示具体地址，只用于复制 -->
             <button
               type="button"
               class="px-3 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 hover:border-slate-400 transition text-xs sm:text-sm flex items-center gap-2"
@@ -57,34 +65,29 @@
                 <span class="absolute -right-1 -bottom-1 w-3.5 h-3.5 border border-slate-400 rounded-[3px] bg-white"></span>
               </span>
               <span class="font-medium text-slate-800">
-                mengjie.yang@u.nus.edu
+                Email (click to copy)
               </span>
             </button>
 
-            <!-- Google Scholar 保留 -->
             <a
-              href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en"
+              href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en"
               target="_blank"
               class="px-3 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 hover:border-slate-400 transition text-xs sm:text-sm"
             >
               Google Scholar
             </a>
           </div>
-
-          <!-- 复制成功提示 -->
           <span id="copy-status" class="text-[11px] text-emerald-600 opacity-0 transition-opacity">
             Email copied to clipboard
           </span>
         </div>
       </div>
 
-      <!-- 简单导航 -->
       <nav class="mt-5 border-t border-slate-200 pt-3 text-xs sm:text-sm text-slate-600 flex flex-wrap gap-4">
         <a href="#about" class="hover:text-accent">About</a>
         <a href="#experience" class="hover:text-accent">Academic Experience</a>
-        <a href="#selected-publications" class="hover:text-accent font-semibold">Publications</a>
+        <a href="#publications" class="hover:text-accent">Publications</a>
         <a href="#presentations" class="hover:text-accent">Presentations</a>
-        <a href="publications.html" class="ml-auto text-accent hover:underline">Full publication list →</a>
       </nav>
     </div>
   </header>
@@ -92,9 +95,8 @@
   <main class="max-w-5xl mx-auto px-5 sm:px-6 py-8 sm:py-10">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10">
 
-      <!-- 左侧栏：Education / Honors / Skills -->
+      <!-- 左侧栏 -->
       <aside class="md:col-span-4 space-y-6">
-        <!-- About / Research focus（改成更 frontier 的版本） -->
         <section id="about" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
           <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
             Research Focus
@@ -103,13 +105,12 @@
             I explore emergent phenomena in
             <span class="font-semibold">non-Hermitian topology</span>,
             <span class="font-semibold">quantum many-body systems</span>, and
-            <span class="font-semibold">quantum circuits and simulation on hardware</span>.
+            <span class="font-semibold">quantum circuits</span>.
             My work centers on non-Hermitian skin effects, exceptional spectral structures,
             and critical dynamics at the interface of topology, dissipation, and quantum coherence.
           </p>
         </section>
 
-        <!-- Education -->
         <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
           <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
             Education
@@ -135,7 +136,6 @@
           </div>
         </section>
 
-        <!-- Honors -->
         <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
           <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
             Honors & Awards
@@ -148,7 +148,6 @@
           </ul>
         </section>
 
-        <!-- Skills -->
         <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
           <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
             Skills & Service
@@ -168,183 +167,206 @@
             </div>
           </div>
         </section>
-
       </aside>
 
       <!-- 右侧主内容 -->
       <div class="md:col-span-8 space-y-7">
 
-              <!-- Academic Experience -->
-              <section id="experience" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-                <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-4">
-                  Academic Experience
-                </h2>
-                <div class="space-y-4 text-sm">
-      
-      
-                  <div class="border-l border-slate-200 pl-4">
-                    <div class="flex flex-wrap justify-between gap-2">
-                      <span class="font-semibold text-slate-900">
-                        Visiting Student
-                      </span>
-                      <span class="text-[11px] text-slate-500">
-                        Weizmann Institute of Science, Israel · Feb 2026
-                      </span>
-                    </div>
-                    <p class="mt-1 text-slate-700">
-                      Host: Prof. Alexander Poddubny. Topological photonics & non-Hermitian systems.
-                    </p>
-                  </div>
-      
-                  <div class="border-l border-slate-200 pl-4">
-                    <div class="flex flex-wrap justify-between gap-2">
-                      <span class="font-semibold text-slate-900">
-                        Workshop: Beyond Linearity (BLiNH2025)
-                      </span>
-                      <span class="text-[11px] text-slate-500">
-                        Erice, Italy · Dec 2025
-                      </span>
-                    </div>
-                    <p class="mt-1 text-slate-700">
-                      Frontiers in non-Hermitian many-body physics.
-                    </p>
-                  </div>
+        <!-- Academic Experience -->
+        <section id="experience" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
+          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-4">
+            Academic Experience
+          </h2>
+          <div class="space-y-4 text-sm">
 
-                  <div class="border-l border-slate-200 pl-4">
-                    <div class="flex flex-wrap justify-between gap-2">
-                      <span class="font-semibold text-slate-900">
-                        Invited visit · Max Planck Institute for the Science of Light
-                      </span>
-                      <span class="text-[11px] text-slate-500">
-                        Erlangen, Germany · Dec, 2025
-                      </span>
-                    </div>
-                    <p class="mt-1 text-slate-700">
-                      Invited visit to the theory group of Flore Kunst at MPL, discussing non-Hermitian topology and quantum many-body dynamics.
-                    </p>
-                  </div>
-      
-                  <div class="border-l border-slate-200 pl-4">
-                    <div class="flex flex-wrap justify-between gap-2">
-                      <span class="font-semibold text-slate-900">
-                        Quantum Connections Summer School
-                      </span>
-                      <span class="text-[11px] text-slate-500">
-                        Stockholm, Sweden · Jun 2025
-                      </span>
-                    </div>
-                    <p class="mt-1 text-slate-700">
-                      Lectures by Nobel Laureates (D. Gross, F. Wilczek, et al.).
-                    </p>
-                  </div>
-                </div>
-              </section>
-      
+            <div class="border-l border-slate-200 pl-4">
+              <div class="flex flex-wrap justify-between gap-2">
+                <span class="font-semibold text-slate-900">Visiting Student (upcoming)</span>
+                <span class="text-[11px] text-slate-500">Weizmann Institute of Science, Israel · Feb 2026</span>
+              </div>
+              <p class="mt-1 text-slate-700">
+                Host:
+                <a href="https://www.weizmann.ac.il/complex/poddubny/" target="_blank" class="hover-link">
+                  Prof. Alexander Poddubny
+                </a>.
+              </p>
+            </div>
 
-        <!-- Selected Publications -->
-        <section id="selected-publications" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <h2 class="text-base sm:text-lg font-semibold text-slate-900">
-              Selected Publications
-            </h2>
-            <a href="publications.html"
-               class="text-xs sm:text-sm text-accent hover:underline">
-              View full publication list →
-            </a>
+            <div class="border-l border-slate-200 pl-4">
+              <div class="flex flex-wrap justify-between gap-2">
+                <span class="font-semibold text-slate-900">Invited visit · MPL (Flore Kunst group)</span>
+                <span class="text-[11px] text-slate-500">Erlangen, Germany · Dec 9–11, 2025</span>
+              </div>
+              <p class="mt-1 text-slate-700">
+                Invited visit to the Lise Meitner Research Group of
+                <a href="https://mpl.mpg.de/research-at-mpl/independent-research-groups/kunst-research-group" target="_blank" class="hover-link">
+                  Flore Kunst
+                </a>
+                at the Max Planck Institute for the Science of Light.
+              </p>
+            </div>
+
+            <div class="border-l border-slate-200 pl-4">
+              <div class="flex flex-wrap justify-between gap-2">
+                <span class="font-semibold text-slate-900">Workshop: Beyond Linearity</span>
+                <span class="text-[11px] text-slate-500">Erice, Italy · Dec 2025</span>
+              </div>
+              <p class="mt-1 text-slate-700">Frontiers in non-Hermitian many-body physics.</p>
+            </div>
+
+            <div class="border-l border-slate-200 pl-4">
+              <div class="flex flex-wrap justify-between gap-2">
+                <span class="font-semibold text-slate-900">Quantum Connections Summer School</span>
+                <span class="text-[11px] text-slate-500">Stockholm, Sweden · Jun 2025</span>
+              </div>
+              <p class="mt-1 text-slate-700">
+                Intensive school on quantum information and many-body physics, featuring lectures by Nobel laureates.
+              </p>
+            </div>
           </div>
+        </section>
+
+        <!-- Publications：全部列在首页 -->
+        <section id="publications" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
+          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">
+            Publications
+          </h2>
 
           <ol class="space-y-3 text-sm list-decimal pl-5">
             <li>
               <p class="font-semibold text-slate-900">
-                Percolation-Induced Symmetry Breaking
+                <a href="https://arxiv.org/abs/2510.06338" target="_blank" class="hover-link">
+                  Beyond the non-Hermitian skin effect: scaling-controlled topology from Exceptional-Bound Bands
+                </a>
               </p>
               <p class="text-slate-700">
-                M. Yang, C. H. Lee —
-                <em>Phys. Rev. Lett.</em> <strong>133</strong>, 136602 (2024).
+                <strong>M. Yang</strong>,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://arxiv.org/abs/2510.06338" target="_blank" class="hover-link">
+                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2510.06338</span>
+                </a>
+                (Oct 2025).
               </p>
             </li>
 
             <li>
               <p class="font-semibold text-slate-900">
-                Non-Hermitian strong bosonic clustering through interaction-induced caging
+                <a href="https://arxiv.org/abs/2509.02686" target="_blank" class="hover-link">
+                  Reversing non-Hermitian skin accumulation with a non-local transverse switch
+                </a>
               </p>
               <p class="text-slate-700">
-                M. Yang, L. Yuan, C. H. Lee —
-                <em>Commun. Phys.</em> <strong>8</strong>, 388 (2025).
+                <strong>M. Yang</strong>,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://arxiv.org/abs/2509.02686" target="_blank" class="hover-link">
+                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2509.02686</span>
+                </a>
+                (Sep 2025).
               </p>
             </li>
 
             <li>
               <p class="font-semibold text-slate-900">
-                Beyond the non-Hermitian skin effect: scaling-controlled topology
+                <a href="https://arxiv.org/abs/2507.17295" target="_blank" class="hover-link">
+                  Beyond symmetry protection: Robust feedback-enforced edge states in non-Hermitian stacked quantum spin Hall systems
+                </a>
               </p>
               <p class="text-slate-700">
-                M. Yang, C. H. Lee —
-                <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">
-                  arXiv:2510.06338
-                </span> (Oct 2025).
+                <strong>M. Yang</strong>,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://arxiv.org/abs/2507.17295" target="_blank" class="hover-link">
+                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2507.17295</span>
+                </a>
+                (Jul 2025).
               </p>
             </li>
 
             <li>
               <p class="font-semibold text-slate-900">
-                Topological non-Hermitian skin effect
+                <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" class="hover-link">
+                  Non-Hermitian strong bosonic clustering through interaction-induced caging
+                </a>
               </p>
               <p class="text-slate-700">
-                R. Lin, T. Tai, <strong>M. Yang</strong>, L. Li, C. H. Lee —
-                <em>Front. Phys.</em> <strong>18</strong>, 53605 (2023).
+                <strong>M. Yang</strong>,
+                <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=Luqi+Yuan" target="_blank" class="hover-link">L. Yuan</a>,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" class="hover-link">
+                  <em>Commun. Phys.</em> <strong>8</strong>, 388 (2025)
+                </a>.
+              </p>
+            </li>
+
+            <li>
+              <p class="font-semibold text-slate-900">
+                <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" class="hover-link">
+                  Percolation-Induced Symmetry Breaking
+                </a>
+              </p>
+              <p class="text-slate-700">
+                <strong>M. Yang</strong>,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" class="hover-link">
+                  <em>Phys. Rev. Lett.</em> <strong>133</strong>, 136602 (2024)
+                </a>.
+              </p>
+            </li>
+
+            <li>
+              <p class="font-semibold text-slate-900">
+                <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" class="hover-link">
+                  Topological non-Hermitian skin effect
+                </a>
+              </p>
+              <p class="text-slate-700">
+                R. Lin, T. Tai, <strong>M. Yang</strong>, L. Li,
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
+                <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" class="hover-link">
+                  <em>Front. Phys.</em> <strong>18</strong>, 53605 (2023)
+                </a>.
+              </p>
+            </li>
+
+            <li>
+              <p class="font-semibold text-slate-900">
+                <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" class="hover-link">
+                  Concentrated subradiant modes in a 1D atomic array with chiral waveguides
+                </a>
+              </p>
+              <p class="text-slate-700">
+                <strong>M. Yang</strong> et al. —
+                <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" class="hover-link">
+                  <em>Phys. Rev. A</em> <strong>106</strong>, 043717 (2022)
+                </a>.
               </p>
             </li>
           </ol>
-
-          <div class="mt-4">
-            <a href="publications.html"
-               class="inline-flex items-center text-xs sm:text-sm px-3 py-2 rounded-lg border border-slate-300 hover:bg-slate-100 hover:border-slate-400 text-accent">
-              Full publication list →
-            </a>
-          </div>
         </section>
 
         <!-- Presentations -->
         <section id="presentations" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">
-            Presentations
-          </h2>
+          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">Presentations</h2>
           <div class="space-y-2.5 text-sm">
             <div class="flex flex-col sm:flex-row justify-between sm:items-baseline border-b border-slate-100 pb-2">
               <div>
                 <span class="font-medium">Exceptional Bound Bands</span>
-                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
-                  Invited Talk
-                </span>
+                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">Invited Talk</span>
               </div>
-              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">
-                IPS Meeting 2025
-              </div>
+              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">IPS Meeting 2025</div>
             </div>
-
             <div class="flex flex-col sm:flex-row justify-between sm:items-baseline border-b border-slate-100 pb-2">
               <div>
                 <span class="font-medium">Non-Hermitian Ultra-Strong Bosonic Clustering</span>
-                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
-                  Poster
-                </span>
+                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">Poster</span>
               </div>
-              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">
-                IPS Meeting 2025
-              </div>
+              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">IPS Meeting 2025</div>
             </div>
-
             <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
               <div>
                 <span class="font-medium">Percolation-Induced <em>PT</em> Symmetry Breaking</span>
-                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
-                  Talk
-                </span>
+                <span class="ml-2 text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">Talk</span>
               </div>
-              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">
-                IPS Meeting 2024
-              </div>
+              <div class="text-[11px] text-slate-500 mt-1 sm:mt-0">IPS Meeting 2024</div>
             </div>
           </div>
         </section>
@@ -359,10 +381,11 @@
     </div>
   </footer>
 
-  <!-- 复制 email 的小脚本 -->
   <script>
     function copyEmail() {
-      const email = 'mengjie.yang@u.nus.edu';
+      const user = 'mengjie.yang';
+      const domain = 'u.nus.edu';
+      const email = user + '@' + domain;
       const status = document.getElementById('copy-status');
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -372,20 +395,10 @@
             setTimeout(() => { status.style.opacity = '0'; }, 1600);
           }
         }).catch(() => {
-          // 兜底方案：如果 clipboard API 失败，就用 prompt
-          const ok = window.prompt('Copy the email address:', email);
-          if (ok && status) {
-            status.style.opacity = '1';
-            setTimeout(() => { status.style.opacity = '0'; }, 1600);
-          }
+          window.prompt('Copy:', email);
         });
       } else {
-        // 旧浏览器兜底
-        const ok = window.prompt('Copy the email address:', email);
-        if (ok && status) {
-          status.style.opacity = '1';
-          setTimeout(() => { status.style.opacity = '0'; }, 1600);
-        }
+        window.prompt('Copy:', email);
       }
     }
   </script>
