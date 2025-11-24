@@ -25,166 +25,158 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
+    /* 增加链接下划线动效 */
+    .hover-underline:hover { text-decoration: underline; }
   </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-gray-100 min-h-screen">
+<body class="bg-slate-900 text-gray-100 min-h-screen leading-relaxed">
 
-  <header class="relative overflow-hidden pb-16">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-      <div class="text-center">
-        <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-1">
-          <div class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-            <i class="fas fa-atom text-white text-4xl"></i>
-          </div>
+  <header class="relative border-b border-white/10 bg-slate-900/50 backdrop-blur-md pt-8 pb-8">
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-0.5">
+        <div class="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
+          <i class="fas fa-atom text-white text-3xl"></i>
         </div>
-        
-        <h1 class="text-4xl md:text-5xl font-bold mb-3">Mengjie Yang</h1>
-        <p class="text-xl text-gray-300 mb-2">Ph.D. Candidate in Physics</p>
-        <p class="text-lg text-gray-400 mb-6">National University of Singapore &nbsp;•&nbsp; Advisor: Prof. Ching Hua Lee</p>
-        
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="mailto:yangmengjie02@gmail.com" class="bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-full flex items-center gap-2 transition">
-            <i class="fas fa-envelope"></i> yangmengjie02@gmail.com
-          </a>
-          <div class="flex gap-3">
-            <a href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" class="bg-white/10 hover:bg-white/20 w-11 h-11 rounded-full flex items-center justify-center transition">
-              <i class="fas fa-graduation-cap"></i>
-            </a>
-          </div>
-        </div>
+      </div>
+      
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Mengjie Yang</h1>
+      <p class="text-lg text-purple-400 mb-1 font-medium">Ph.D. Candidate in Physics</p>
+      <p class="text-gray-400 mb-4">National University of Singapore &nbsp;•&nbsp; Advisor: Prof. Ching Hua Lee</p>
+      
+      <div class="flex flex-row justify-center items-center gap-3 text-sm">
+        <a href="mailto:yangmengjie02@gmail.com" class="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full flex items-center gap-2 transition border border-white/10">
+          <i class="fas fa-envelope"></i> yangmengjie02@gmail.com
+        </a>
+        <a href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" class="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full flex items-center gap-2 transition border border-white/10">
+          <i class="fas fa-graduation-cap"></i> Google Scholar
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12">
     
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Education</h2>
-      <div class="space-y-6">
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-          <div class="flex flex-col md:flex-row justify-between">
-            <div>
-              <h3 class="text-xl font-semibold">Ph.D. in Physics</h3>
-              <p class="text-purple-400">National University of Singapore (NUS)</p>
-              <p class="text-gray-400 mt-1">Aug 2023 – Present &nbsp;•&nbsp; Expected graduation: March 2027</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <section>
+        <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-user-graduate mr-2 text-purple-400"></i>Education</h2>
+        <div class="space-y-3">
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+            <h3 class="font-semibold">Ph.D. in Physics</h3>
+            <div class="flex justify-between text-sm mt-1">
+              <span class="text-gray-300">National University of Singapore</span>
+              <span class="text-gray-400">2023 – Present</span>
             </div>
+          </div>
+          <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+             <h3 class="font-semibold">B.Sc. in Physics</h3>
+             <div class="flex justify-between text-sm mt-1">
+               <span class="text-gray-300">Shanghai Jiao Tong University</span>
+               <span class="text-gray-400">2019 – 2023</span>
+             </div>
+             <p class="text-xs text-purple-300 mt-1">Zhiyuan Honors Program (Top 5%)</p>
           </div>
         </div>
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-          <div class="flex flex-col md:flex-row justify-between">
-            <div>
-              <h3 class="text-xl font-semibold">B.Sc. in Physics</h3>
-              <p class="text-purple-400">Shanghai Jiao Tong University (SJTU)</p>
-              <p class="text-gray-400 mt-1">Sep 2019 – Jun 2023 &nbsp;•&nbsp; Zhiyuan Honors Program (Top 5%)</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-briefcase mr-2 text-purple-400"></i>Experience</h2>
+        <div class="bg-white/5 rounded-lg p-4 border border-white/10 h-full">
+            <h3 class="font-semibold">Quantum Connections Summer School</h3>
+            <div class="flex justify-between text-sm mt-1 mb-2">
+              <span class="text-gray-300">Stockholm, Sweden</span>
+              <span class="text-gray-400">Jun 2025</span>
             </div>
-          </div>
+            <p class="text-gray-400 text-sm leading-snug">
+             Intensive workshops on quantum information, many-body physics, and entanglement dynamics.
+            </p>
+        </div>
+      </section>
+    </div>
+
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-lightbulb mr-2 text-purple-400"></i>Research Interests</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+          <h3 class="font-semibold mb-1 text-purple-300">Non-Hermitian Physics</h3>
+          <p class="text-gray-400 text-sm leading-snug">Topology, skin effects, exceptional points, scaling-controlled phases.</p>
+        </div>
+        <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+          <h3 class="font-semibold mb-1 text-purple-300">Quantum Many-Body</h3>
+          <p class="text-gray-400 text-sm leading-snug">Bosonic clustering, subradiance, non-equilibrium dynamics.</p>
+        </div>
+        <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+          <h3 class="font-semibold mb-1 text-purple-300">Phase Transitions</h3>
+          <p class="text-gray-400 text-sm leading-snug">Percolation-induced symmetry breaking, critical phenomena.</p>
         </div>
       </div>
     </section>
 
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Academic Experience</h2>
-      <div class="space-y-6">
-        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-          <div class="flex flex-col md:flex-row justify-between items-start">
-            <div>
-              <h3 class="text-xl font-semibold">Quantum Connections Summer School</h3>
-              <p class="text-purple-400">Stockholm, Sweden</p>
-            </div>
-            <div class="mt-2 md:mt-0 text-gray-400 text-sm md:text-right">
-              Jun 8 – Jun 21, 2025
-            </div>
-          </div>
-          <p class="text-gray-300 mt-3 text-sm">
-             Participated in intensive lectures and workshops on quantum information, many-body physics, and entanglement dynamics.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Research Interests</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <h3 class="font-semibold text-lg mb-2">Non-Hermitian Physics</h3>
-          <p class="text-gray-300 text-sm">Topology, skin effects, exceptional points, and scaling-controlled phases</p>
-        </div>
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <h3 class="font-semibold text-lg mb-2">Quantum Many-Body Systems</h3>
-          <p class="text-gray-300 text-sm">Bosonic clustering, subradiance, and non-equilibrium dynamics</p>
-        </div>
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <h3 class="font-semibold text-lg mb-2">Phase Transitions</h3>
-          <p class="text-gray-300 text-sm">Percolation-induced symmetry breaking and critical phenomena</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-16">
-      <div class="flex justify-between items-center mb-8">
-        <h2 class="text-3xl font-bold">Publications</h2>
-        <a href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" class="text-blue-400 hover:text-blue-300 flex items-center gap-1">
-          View all on Google Scholar <i class="fas fa-external-link-alt text-xs"></i>
+    <section class="mb-12">
+      <div class="flex justify-between items-center mb-4 pb-2 border-b border-white/10">
+        <h2 class="text-xl font-bold flex items-center"><i class="fas fa-scroll mr-2 text-purple-400"></i>Publications</h2>
+        <a href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" class="text-sm text-purple-400 hover:text-purple-300 hover-underline flex items-center gap-1 transition">
+          Google Scholar <i class="fas fa-external-link-alt text-xs"></i>
         </a>
       </div>
-      <div class="space-y-5">
+      
+      <div class="bg-white/5 rounded-lg border border-white/10 px-4 py-2 divide-y divide-white/10 text-sm">
         
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Beyond the non-Hermitian skin effect: scaling-controlled topology</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Oct 2025</span>
-          </div>
-          <p class="text-purple-400 mt-1">M. Yang, C. H. Lee — arXiv:2510.06338</p>
+        <div class="py-3">
+            <div class="flex justify-between items-baseline">
+             <h3 class="font-bold text-base text-gray-100">Beyond the non-Hermitian skin effect: scaling-controlled topology</h3>
+             <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Oct 2025</span>
+            </div>
+            <p class="text-gray-300 mt-0.5">M. Yang, C. H. Lee — <span class="text-purple-300">arXiv:2510.06338</span></p>
         </div>
 
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Non-Hermitian strong bosonic clustering through interaction-induced caging</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Sep 2025</span>
-          </div>
-          <p class="text-purple-400 mt-1">M. Yang, L. Yuan, C. H. Lee — <em>Commun. Phys.</em> <b>8</b>, 388 (2025)</p>
+        <div class="py-3">
+            <div class="flex justify-between items-baseline">
+             <h3 class="font-bold text-base text-gray-100">Non-Hermitian strong bosonic clustering through interaction-induced caging</h3>
+             <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Sep 2025</span>
+            </div>
+            <p class="text-gray-300 mt-0.5">M. Yang, L. Yuan, C. H. Lee — <span class="text-purple-300 italic">Commun. Phys.</span> <b>8</b>, 388 (2025)</p>
+        </div>
+        
+        <div class="py-3">
+             <div class="flex justify-between items-baseline">
+              <h3 class="font-bold text-base text-gray-100">Reversing non-Hermitian skin accumulation with a non-local transverse switch</h3>
+              <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Sep 2025</span>
+             </div>
+             <p class="text-gray-300 mt-0.5">M. Yang, C. H. Lee — <span class="text-purple-300">arXiv:2509.02686</span></p>
         </div>
 
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-           <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Reversing non-Hermitian skin accumulation with a non-local transverse switch</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Sep 2025</span>
+        <div class="py-3">
+             <div class="flex justify-between items-baseline">
+              <h3 class="font-bold text-base text-gray-100">Beyond symmetry protection: Robust feedback-enforced edge states</h3>
+              <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Jul 2025</span>
+             </div>
+             <p class="text-gray-300 mt-0.5">M. Yang, C. H. Lee — <span class="text-purple-300">arXiv:2507.17295</span></p>
+        </div>
+
+        <div class="py-3">
+             <div class="flex justify-between items-baseline">
+              <h3 class="font-bold text-base text-gray-100">Percolation-Induced Symmetry Breaking</h3>
+              <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Sep 2024</span>
+             </div>
+             <p class="text-gray-300 mt-0.5">M. Yang, C. H. Lee — <span class="text-purple-300 italic">Phys. Rev. Lett.</span> <b>133</b>, 136602 (2024)</p>
+        </div>
+
+         <div class="py-3">
+             <div class="flex justify-between items-baseline">
+              <h3 class="font-bold text-base text-gray-100">Topological non-Hermitian skin effect</h3>
+              <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Jul 2023</span>
+             </div>
+            <p class="text-gray-300 mt-0.5">R. Lin, T. Tai, M. Yang, L. Li, C. H. Lee — <span class="text-purple-300 italic">Front. Phys.</span> <b>18</b>, 53605</p>
+        </div>
+
+        <div class="py-3">
+           <div class="flex justify-between items-baseline">
+             <h3 class="font-bold text-base text-gray-100">Concentrated subradiant modes in a 1D atomic array with chiral waveguides</h3>
+             <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">Oct 2022</span>
            </div>
-          <p class="text-purple-400 mt-1">M. Yang, C. H. Lee — arXiv:2509.02686</p>
-        </div>
-
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Beyond symmetry protection: Robust feedback-enforced edge states</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Jul 2025</span>
-          </div>
-          <p class="text-purple-400 mt-1">M. Yang, C. H. Lee — arXiv:2507.17295</p>
-        </div>
-
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Percolation-Induced Symmetry Breaking</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Sep 2024</span>
-          </div>
-          <p class="text-purple-400 mt-1">M. Yang, C. H. Lee — <em>Phys. Rev. Lett.</em> <b>133</b>, 136602 (2024)</p>
-        </div>
-
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-           <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Topological non-Hermitian skin effect</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Jul 2023</span>
-           </div>
-          <p class="text-purple-400 mt-1">R. Lin, T. Tai, M. Yang, L. Li, C. H. Lee — <em>Front. Phys.</em> <b>18</b>, 53605</p>
-        </div>
-
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-           <div class="flex justify-between items-start">
-             <h3 class="font-medium text-lg text-white">Concentrated subradiant modes in a 1D atomic array with chiral waveguides</h3>
-             <span class="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded ml-2 whitespace-nowrap">Oct 2022</span>
-           </div>
-          <p class="text-purple-400 mt-1">M. Yang et al. — <em>Phys. Rev. A</em> <b>106</b>, 043717 (2022)</p>
+          <p class="text-gray-300 mt-0.5">M. Yang et al. — <span class="text-purple-300 italic">Phys. Rev. A</span> <b>106</b>, 043717 (2022)</p>
         </div>
 
       </div>
@@ -192,42 +184,35 @@
 
     <div class="grid md:grid-cols-2 gap-8">
       <div>
-        <h2 class="text-3xl font-bold text-center mb-6">Awards</h2>
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-          <ul class="space-y-2 text-gray-300">
+        <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-trophy mr-2 text-purple-400"></i>Awards</h2>
+        <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-sm">
+          <ul class="space-y-1.5 text-gray-300">
             <li>• Faculty of Science PhD Conference Award, NUS (2024)</li>
             <li>• Best Bachelor Thesis, SJTU (Top 1%) (2023)</li>
             <li>• Outstanding Graduate, SJTU (Top 1%) (2023)</li>
-            <li>• Best Bachelor Thesis, Department of Physics (2023)</li>
             <li>• Zhiyuan Honors Scholarship (Top 5%, 4 times) (2019–2023)</li>
           </ul>
         </div>
       </div>
 
       <div>
-        <h2 class="text-3xl font-bold text-center mb-6">Technical Skills</h2>
-        <div class="bg-white/5 p-5 rounded-xl border border-white/10 space-y-3">
-          <div>
-            <div class="font-medium text-gray-200 mb-1">Programming</div>
-            <div class="text-gray-400">Python (NumPy, SciPy, pandas, Matplotlib), Mathematica, MATLAB, Git</div>
+        <h2 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-tools mr-2 text-purple-400"></i>Skills</h2>
+        <div class="bg-white/5 p-4 rounded-lg border border-white/10 text-sm space-y-2">
+          <div class="flex flex-col sm:flex-row sm:gap-2">
+            <span class="font-semibold text-purple-300 sm:w-24 shrink-0">Coding:</span>
+            <span class="text-gray-400">Python (NumPy, SciPy, Matplotlib), Mathematica, MATLAB, Git</span>
           </div>
-          <div>
-            <div class="font-medium text-gray-200 mb-1">Modeling</div>
-            <div class="text-gray-400">Mathematical Modeling, Numerical Simulation, Statistical Mechanics, Algorithm Development</div>
-          </div>
-          <div>
-            <div class="font-medium text-gray-200 mb-1">Core Knowledge</div>
-            <div class="text-gray-400">Linear Algebra, Differential Equations, Stochastic Processes, Complex Analysis</div>
+           <div class="flex flex-col sm:flex-row sm:gap-2">
+            <span class="font-semibold text-purple-300 sm:w-24 shrink-0">Modeling:</span>
+            <span class="text-gray-400">Numerical Simulation, Stat Mech, Algorithm Dev</span>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="bg-black/30 backdrop-blur-sm border-t border-white/10 py-6">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
-      © 2025 Mengjie Yang. Department of Physics, National University of Singapore.
-    </div>
+  <footer class="mt-12 border-t border-white/10 py-6 text-center text-gray-500 text-sm">
+      © 2025 Mengjie Yang. NUS Physics.
   </footer>
 </body>
 </html>
