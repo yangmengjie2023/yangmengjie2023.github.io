@@ -171,6 +171,16 @@
       <!-- Main Content -->
       <div class="md:col-span-8 space-y-7">
 
+        <!-- Academic Experience (placeholder section so nav works) -->
+        <section id="experience" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
+          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">
+            Academic Experience
+          </h2>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            <!-- Optional: add your research roles / teaching / talks here -->
+          </p>
+        </section>
+
         <!-- Publications -->
         <section id="publications" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
           <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">
@@ -193,7 +203,7 @@
                 (Oct 2025).
               </p>
               <p class="text-slate-700">
-                This paper introduces a novel mechanism for topological transitions in non-Hermitian systems, controlled by system size. The authors propose a new phenomenon called "exceptional-bound band engineering," which focuses on scaling-controlled topological transitions that arise from critical scaling behavior near exceptional points. The results apply across different dimensions and interaction strengths, revealing significant implications for multi-dimensional lattices and quantum circuits.
+                In this paper, we introduce a new mechanism for topological transitions in non-Hermitian systems that is controlled by system size. We develop “exceptional-bound band engineering,” where critical scaling near exceptional points drives scaling-controlled topological transitions. Our results apply across different dimensions and interaction regimes, with implications for multi-dimensional lattices and quantum circuits.
               </p>
             </li>
 
@@ -212,7 +222,7 @@
                 (Sep 2025).
               </p>
               <p class="text-slate-700">
-                This work explores a new method for reversing non-Hermitian skin effect (NHSE) accumulation in non-Hermitian systems by adjusting the system size or boundary conditions in a perpendicular direction. The study presents how the NHSE direction can be controlled and reversed without modifying the underlying couplings, and discusses the potential applications in sensing and lasing technologies.
+                In this work, we develop a way to reverse non-Hermitian skin-effect (NHSE) accumulation by tuning system size or boundary conditions in a transverse direction. We show that the NHSE direction can be controlled—and even reversed—without modifying the underlying couplings. We further discuss potential implications for sensing and lasing applications.
               </p>
             </li>
 
@@ -231,7 +241,7 @@
                 (Jul 2025).
               </p>
               <p class="text-slate-700">
-                In this paper, the authors examine robust feedback-enforced edge states in non-Hermitian quantum spin Hall systems. Their findings demonstrate that feedback mechanisms can protect edge states, making them resilient against disorder, and open pathways for exploring topological non-Hermitian systems in more complex settings.
+                In this paper, we study feedback-enforced edge states in non-Hermitian quantum spin Hall systems. We demonstrate that feedback can protect edge states and make them resilient against disorder, going beyond conventional symmetry-based protection. Our results open pathways for realizing robust non-Hermitian topological phenomena in more complex settings.
               </p>
             </li>
 
@@ -250,7 +260,7 @@
                 </a>.
               </p>
               <p class="text-slate-700">
-                This paper proposes a mechanism in which non-Hermitian pumping, bosonic repulsion, and topological band effects combine to produce an emergent "cage" that traps bosons at the lattice edge. The study shows that this mechanism can significantly enhance bosonic clustering at boundaries compared to interaction-induced trapping alone, offering insights for future quantum memory and transport devices.
+                In this paper, we propose a mechanism where non-Hermitian pumping, bosonic repulsion, and topological band effects combine to generate an emergent “cage” that traps bosons at the lattice edge. We show that this significantly enhances boundary clustering compared with interaction-induced trapping alone, and we discuss implications for future quantum memory and transport devices.
               </p>
             </li>
 
@@ -268,7 +278,7 @@
                 </a>.
               </p>
               <p class="text-slate-700">
-                This work introduces percolation as a mechanism that drives PT symmetry breaking in non-Hermitian systems. By showing how percolation transitions lead to real-to-complex spectrum shifts, the authors highlight a new way for percolation to influence system dynamics, particularly in disordered systems, and its potential applications in feedback systems.
+                In this work, we introduce percolation as a mechanism that drives PT-symmetry breaking in non-Hermitian systems. We show how percolation transitions induce real-to-complex spectral changes, and we highlight how percolation can reshape dynamics in disordered settings, with potential relevance to feedback-controlled platforms.
               </p>
             </li>
 
@@ -286,7 +296,7 @@
                 </a>.
               </p>
               <p class="text-slate-700">
-                This paper explores the topological non-Hermitian skin effect, examining the key physical mechanisms responsible for its emergence and providing theoretical insights into the behavior of topological non-Hermitian systems.
+                In this paper, we explore the topological non-Hermitian skin effect by identifying key physical mechanisms behind its emergence. We analyze how topology and non-Hermiticity intertwine to produce boundary accumulation, and we provide theoretical insights that help guide the understanding and design of topological non-Hermitian systems.
               </p>
             </li>
 
@@ -303,7 +313,7 @@
                 </a>.
               </p>
               <p class="text-slate-700">
-                This paper presents a study on non-Hermitian atom-waveguide systems, demonstrating how a tilted atomic array coupled with chiral waveguides creates subradiant and superradiant modes. This work reveals the potential for quantum state storage and photon manipulation by harnessing the non-Hermitian skin effect in open quantum systems.
+                In this paper, we study a non-Hermitian atom–waveguide platform and show how a tilted 1D atomic array coupled to chiral waveguides gives rise to concentrated subradiant and superradiant modes. We demonstrate how skin-effect physics emerges in this open quantum setting, suggesting possibilities for quantum state storage and photon manipulation.
               </p>
             </li>
           </ol>
@@ -314,4 +324,47 @@
   </main>
 
   <footer class="border-t border-slate-200 bg-white py-5">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center text-[11px]
+    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center text-[11px] text-slate-500">
+      © <span id="year"></span> Mengjie Yang · All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // TODO: Replace with your real email:
+    const EMAIL_TO_COPY = "YOUR_EMAIL_HERE";
+
+    function setCopyStatusVisible(visible) {
+      const el = document.getElementById("copy-status");
+      if (!el) return;
+      el.classList.toggle("opacity-0", !visible);
+      el.classList.toggle("opacity-100", visible);
+    }
+
+    async function copyEmail() {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(EMAIL_TO_COPY);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = EMAIL_TO_COPY;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          ta.style.top = "-9999px";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        setCopyStatusVisible(true);
+        setTimeout(() => setCopyStatusVisible(false), 1200);
+      } catch (e) {
+        // fail silently
+      }
+    }
+
+    // footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
