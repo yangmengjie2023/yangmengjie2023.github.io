@@ -2,417 +2,674 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mengjie Yang - Physics Ph.D. Candidate</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mengjie Yang | Physics Ph.D. Candidate</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-
-    .hover-link {
-      transition: color 0.2s;
+    :root {
+      --bg: #f5f2eb;
+      --card: #fffdf8;
+      --text: #263238;
+      --muted: #5f6f7a;
+      --light: #8a98a3;
+      --border: #d9e2e7;
+      --accent: #245c7c;
+      --accent-dark: #16384f;
+      --accent-soft: #e8f3f7;
+      --gold: #b08d57;
     }
-    .hover-link:hover {
-      color: #0369a1;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
       text-decoration: underline;
     }
-  </style>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            accent: '#0369a1',
-          }
-        }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: linear-gradient(180deg, #fffdf8 0%, #f7fbfd 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      padding: 38px 0 26px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--accent-dark);
+    }
+
+    .subtitle {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .advisor {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      min-width: 270px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #c9d7df;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--accent-dark);
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.18s ease;
+      cursor: pointer;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      box-shadow: 0 1px 2px rgba(22, 56, 79, 0.06);
+    }
+
+    .button:hover {
+      background: var(--accent-soft);
+      border-color: #9fb8c7;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    .email-line {
+      width: 100%;
+      text-align: right;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    #copy-status {
+      color: #357a58;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      font-size: 13px;
+    }
+
+    #copy-status.visible {
+      opacity: 1;
+    }
+
+    nav {
+      margin-top: 27px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    nav a {
+      font-weight: 600;
+    }
+
+    main {
+      padding: 36px 0 50px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .sidebar,
+    .main-col {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 23px 25px;
+      box-shadow: 0 4px 14px rgba(22, 56, 79, 0.045);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 21px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .section-note {
+      margin-top: -8px;
+      margin-bottom: 14px;
+      color: var(--light);
+      font-size: 14px;
+    }
+
+    .small-heading {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .small-heading::after {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 7px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .paragraph-gap {
+      margin-top: 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .compact-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .compact-list li {
+      margin: 5px 0;
+    }
+
+    .entry {
+      margin-bottom: 15px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .entry-date {
+      color: var(--light);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #c9dfe8;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 13px;
+      margin-left: 4px;
+      font-weight: 600;
+    }
+
+    .pub-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .pub-list li {
+      margin-bottom: 20px;
+      padding-left: 4px;
+    }
+
+    .pub-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .paper-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .paper-meta {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .paper-desc {
+      margin-top: 6px;
+      color: #36464f;
+      font-size: 15px;
+    }
+
+    .venue {
+      font-style: italic;
+    }
+
+    .presentation-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .presentation-list li {
+      margin-bottom: 14px;
+      padding-left: 4px;
+    }
+
+    .presentation-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fffdf8;
+      padding: 18px 0;
+      text-align: center;
+      color: var(--light);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .top-row {
+        flex-direction: column;
+      }
+
+      .actions {
+        justify-content: flex-start;
+        min-width: 0;
+      }
+
+      .email-line {
+        text-align: left;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 37px;
       }
     }
-  </script>
+  </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800">
-  <header class="border-b border-slate-200 bg-white">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 py-6 sm:py-8">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="top-row">
         <div>
-          <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
-            Mengjie Yang
-          </h1>
-          <p class="mt-1 text-sm sm:text-base text-slate-600">
-            Ph.D. Candidate in Physics (expected graduation in 2027) ·
-            <a href="https://nus.edu.sg/" target="_blank" class="hover-link">National University of Singapore</a>
+          <h1>Mengjie Yang</h1>
+          <p class="subtitle">
+            Ph.D. Candidate in Physics, National University of Singapore
           </p>
-          <p class="mt-1 text-xs text-slate-500">
+          <p class="advisor">
             Advisor:
-            <a href="https://www.physics.nus.edu.sg/faculty/lee-ching-hua/" target="_blank" class="hover-link font-medium text-slate-600">
+            <a href="https://www.physics.nus.edu.sg/faculty/lee-ching-hua/" target="_blank" rel="noopener">
               Prof. Ching Hua Lee
             </a>
+            · Expected graduation: 2027
           </p>
         </div>
 
-        <div class="flex flex-col items-end gap-2 text-sm">
-          <div class="flex flex-wrap gap-2 justify-end">
-            <button
-              type="button"
-              class="px-3 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 hover:border-slate-400 transition text-xs sm:text-sm flex items-center gap-2"
-              onclick="copyEmail()"
-            >
-              <span class="inline-block w-3.5 h-3.5 border border-slate-500 rounded-[3px] relative">
-                <span class="absolute -right-1 -bottom-1 w-3.5 h-3.5 border border-slate-400 rounded-[3px] bg-white"></span>
-              </span>
-              <span class="font-medium text-slate-800">
-                Email (click to copy)
-              </span>
-            </button>
-
-            <a
-              href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en"
-              target="_blank"
-              class="px-3 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 hover:border-slate-400 transition text-xs sm:text-sm"
-            >
-              Google Scholar
-            </a>
+        <div class="actions">
+          <button class="button" type="button" onclick="copyEmail()">Email</button>
+          <a class="button" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="button" href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" rel="noopener">
+            Google Scholar
+          </a>
+          <div class="email-line">
+            mengjie.yang@u.nus.edu
+            <span id="copy-status"> · copied</span>
           </div>
-          <span id="copy-status" class="text-[11px] text-emerald-600 opacity-0 transition-opacity">
-            Email copied to clipboard
-          </span>
         </div>
       </div>
 
-      <nav class="mt-5 border-t border-slate-200 pt-3 text-xs sm:text-sm text-slate-600 flex flex-wrap gap-4">
-        <a href="#about" class="hover:text-accent">About</a>
-        <a href="#presentations" class="hover:text-accent">Presentations</a>
-        <a href="#publications" class="hover:text-accent">Publications</a>
-        <a href="cooking.html" class="hover:text-accent">Cooking</a>
-
+      <nav>
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#presentations">Presentations</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Honors & Awards</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-5 sm:px-6 py-8 sm:py-10">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10">
+  <main>
+    <div class="container layout">
+      <aside class="sidebar">
+        <section id="about">
+          <h2 class="small-heading">About</h2>
+          <p>
+            I study how non-Hermiticity, topology, and interactions reshape spectra,
+            localization, and dynamics in open quantum systems. My doctoral work has
+            focused on non-Hermitian skin effects, exceptional spectral structures,
+            feedback-enforced edge states, and many-body clustering phenomena.
+          </p>
 
-      <!-- Left Sidebar -->
-      <aside class="md:col-span-4 space-y-6">
-        <section id="about" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
-            Research Focus
-          </h2>
-          <p class="text-sm text-slate-700 leading-relaxed">
-            I explore emergent phenomena in
-            <span class="font-semibold">non-Hermitian topology</span>,
-            <span class="font-semibold">quantum many-body systems</span>, and
-            <span class="font-semibold">quantum circuits</span>.
-            My work centers on non-Hermitian skin effects, exceptional spectral structures,
-            and critical dynamics at the interface of topology, dissipation, and quantum coherence.
+          <p class="paragraph-gap">
+            I am currently looking for postdoctoral opportunities starting in 2027.
+            For my postdoctoral work, I am interested in broadening my research direction
+            toward condensed matter theory, quantum many-body physics, open quantum systems,
+            topological phases, nonequilibrium dynamics, and quantum information-related
+            problems.
           </p>
         </section>
 
-        <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
-            Education
-          </h2>
-          <div class="space-y-3 text-sm">
-            <div>
-              <div class="flex justify-between gap-2">
-                <span class="font-semibold text-slate-900">Ph.D. in Physics</span>
-                <span class="text-[11px] text-slate-500">2023 – Present</span>
-              </div>
-              <p class="text-slate-700">National University of Singapore</p>
+        <section id="education">
+          <h2 class="small-heading">Education</h2>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">Ph.D. in Physics</span>
+              <span class="entry-date">2023–Present</span>
             </div>
-            <div>
-              <div class="flex justify-between gap-2">
-                <span class="font-semibold text-slate-900">B.Sc. in Physics</span>
-                <span class="text-[11px] text-slate-500">2019 – 2023</span>
-              </div>
-              <p class="text-slate-700">Shanghai Jiao Tong University</p>
-              <p class="text-[11px] text-slate-500 italic mt-1">
-                Zhiyuan Honors Program (Top 5%)
-              </p>
+            <p class="muted">National University of Singapore</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-head">
+              <span class="entry-title">B.Sc. in Physics</span>
+              <span class="entry-date">2019–2023</span>
             </div>
+            <p class="muted">Shanghai Jiao Tong University</p>
+            <p class="muted"><em>Zhiyuan Honors Program, Top 5%</em></p>
           </div>
         </section>
 
-        <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
-            Honors & Awards
-          </h2>
-          <ul class="space-y-1.5 text-sm text-slate-700 list-disc pl-4 marker:text-slate-300">
-            <li>Faculty of Science PhD Conference Award, NUS (2024)</li>
-            <li>Best Bachelor Thesis, SJTU (Top 1%) (2023)</li>
-            <li>Outstanding Graduate, SJTU (Top 1%) (2023)</li>
-            <li>Zhiyuan Honors Scholarship (2019–2023)</li>
+        <section id="awards">
+          <h2 class="small-heading">Honors & Awards</h2>
+          <ul class="compact-list">
+            <li>Faculty of Science PhD Conference Award, NUS, 2024</li>
+            <li>Best Bachelor Thesis, SJTU, Top 1%, 2023</li>
+            <li>Outstanding Graduate, SJTU, Top 1%, 2023</li>
+            <li>Zhiyuan Honors Scholarship, 2019–2023</li>
           </ul>
         </section>
 
-        <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-sm font-semibold text-slate-900 tracking-wide uppercase mb-3">
-            Skills & Service
-          </h2>
-          <div class="space-y-2 text-sm">
-            <div>
-              <p class="font-semibold text-slate-900">Academic Service</p>
-              <p class="text-slate-700 text-sm">
-                Reviewer, <em>Communications Physics</em><br>
-                Reviewer, <em>Nature Communications</em>
-              </p>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-900">Programming</p>
-              <p class="text-slate-700 text-sm">
-                Python (Qiskit, NumPy), Mathematica, MATLAB
-              </p>
-            </div>
+        <section>
+          <h2 class="small-heading">Skills & Service</h2>
+
+          <div class="entry">
+            <p class="entry-title">Academic Service</p>
+            <p class="muted">
+              Reviewer, <em>Communications Physics</em><br />
+              Reviewer, <em>Nature Communications</em>
+            </p>
+          </div>
+
+          <div class="entry">
+            <p class="entry-title">Programming</p>
+            <p class="muted">
+              Python, Qiskit, NumPy, Mathematica, MATLAB
+            </p>
           </div>
         </section>
       </aside>
 
-      <!-- Main Content -->
-      <div class="md:col-span-8 space-y-7">
+      <div class="main-col">
+        <section id="publications">
+          <h2>Publications</h2>
+          <p class="section-note">Selected publications and preprints</p>
 
-        <!-- Presentations -->
-        <section id="presentations" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <div class="flex items-baseline justify-between gap-3 flex-wrap">
-            <h2 class="text-base sm:text-lg font-semibold text-slate-900">
-              Presentations
-            </h2>
-            <span class="text-[11px] text-slate-500">
-              Selected talks & posters
-            </span>
-          </div>
-
-          <ol class="mt-4 space-y-3 text-sm list-decimal pl-5">
+          <ol class="pub-list">
             <li>
-              <p class="font-semibold text-slate-900">
-                Poster — <span class="italic">BLINH 2025</span>
-              </p>
-              <p class="text-slate-700">
-                <span class="font-medium">Dec 2025</span> · <span class="text-slate-600">Erice, Sicily, Italy</span><br/>
-                <span class="text-slate-800">Percolation-induced PT-symmetry breaking</span>
-              </p>
-            </li>
-
-            <li>
-              <p class="font-semibold text-slate-900">
-                Talk — <span class="italic">Max Planck Institute for the Science of Light (MPL)</span>
-              </p>
-              <p class="text-slate-700">
-                <span class="font-medium">Dec 2025</span> · <span class="text-slate-600">Erlangen, Germany</span><br/>
-                <span class="text-slate-800">Topological-Guided Gain and Feedback-Enforced Edge Dynamics in Non-Hermitian Systems</span>
-              </p>
-            </li>
-
-            <li>
-              <p class="font-semibold text-slate-900">
-                Posters — <span class="italic">Quantum Connections</span>
-              </p>
-              <p class="text-slate-700">
-                <span class="font-medium">Jun 2025</span> · <span class="text-slate-600">Stockholm, Sweden</span><br/>
-                <span class="text-slate-800">Percolation-induced PT-symmetry breaking</span><br/>
-                <span class="text-slate-800">Non-Hermitian strong bosonic clustering through interaction-induced caging</span>
-              </p>
-            </li>
-
-            <li>
-              <p class="font-semibold text-slate-900">
-                Talk — <span class="italic">IPS</span>
-              </p>
-              <p class="text-slate-700">
-                <span class="font-medium">Sep 2024</span> · <span class="text-slate-600">Singapore</span><br/>
-                <span class="text-slate-800">Exceptional Bound Bands</span>
-              </p>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Publications -->
-        <section id="publications" class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5">
-          <h2 class="text-base sm:text-lg font-semibold text-slate-900 mb-3">
-            Publications
-          </h2>
-
-          <ol class="space-y-3 text-sm list-decimal pl-5">
-            <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://arxiv.org/abs/2510.06338" target="_blank" class="hover-link">
-                  Beyond the non-Hermitian skin effect: scaling-controlled topology from Exceptional-Bound Bands
+              <p class="paper-title">
+                <a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/advs.202523989" target="_blank" rel="noopener">
+                  Beyond the Non-Hermitian Skin Effect: Scaling-Controlled Topology from Exceptional-Bound Bands
                 </a>
               </p>
-              <p class="text-slate-700">
-                <strong>M. Yang</strong>,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://arxiv.org/abs/2510.06338" target="_blank" class="hover-link">
-                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2510.06338</span>
-                </a>
-                (Oct 2025).
+              <p class="paper-meta">
+                <strong>M. Yang</strong> and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                <span class="venue">Advanced Science</span>, e23989, 2026.
+                DOI:
+                <a href="https://doi.org/10.1002/advs.202523989" target="_blank" rel="noopener">
+                  10.1002/advs.202523989
+                </a>.
               </p>
-              <p class="text-slate-700">
-                In this paper, we introduce a new mechanism for topological transitions in non-Hermitian systems that is controlled by system size. We develop “exceptional-bound band engineering,” where critical scaling near exceptional points drives scaling-controlled topological transitions. Our results apply across different dimensions and interaction regimes, with implications for multi-dimensional lattices and quantum circuits.
+              <p class="paper-desc">
+                Introduces exceptional-bound-band engineering as a mechanism for size-controlled topological transitions in non-Hermitian systems.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://arxiv.org/abs/2509.02686" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://www.nature.com/articles/s42005-026-02608-5" target="_blank" rel="noopener">
                   Reversing non-Hermitian skin accumulation with a non-local transverse switch
                 </a>
               </p>
-              <p class="text-slate-700">
-                <strong>M. Yang</strong>,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://arxiv.org/abs/2509.02686" target="_blank" class="hover-link">
-                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2509.02686</span>
-                </a>
-                (Sep 2025).
+              <p class="paper-meta">
+                <strong>M. Yang</strong> and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                <span class="venue">Communications Physics</span>, 2026.
+                DOI:
+                <a href="https://doi.org/10.1038/s42005-026-02608-5" target="_blank" rel="noopener">
+                  10.1038/s42005-026-02608-5
+                </a>.
               </p>
-              <p class="text-slate-700">
-                In this work, we develop a way to reverse non-Hermitian skin-effect (NHSE) accumulation by tuning system size or boundary conditions in a transverse direction. We show that the NHSE direction can be controlled—and even reversed—without modifying the underlying couplings. We further discuss potential implications for sensing and lasing applications.
+              <p class="paper-desc">
+                Shows that non-Hermitian skin accumulation can be reversed through transverse size and boundary control.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://arxiv.org/abs/2507.17295" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://arxiv.org/abs/2507.17295" target="_blank" rel="noopener">
                   Beyond symmetry protection: Robust feedback-enforced edge states in non-Hermitian stacked quantum spin Hall systems
                 </a>
+                <span class="tag">Preprint</span>
               </p>
-              <p class="text-slate-700">
-                <strong>M. Yang</strong>,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://arxiv.org/abs/2507.17295" target="_blank" class="hover-link">
-                  <span class="font-mono text-[11px] bg-slate-100 px-1 rounded">arXiv:2507.17295</span>
-                </a>
-                (Jul 2025).
+              <p class="paper-meta">
+                <strong>M. Yang</strong> and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                arXiv:2507.17295, 2025.
               </p>
-              <p class="text-slate-700">
-                In this paper, we study feedback-enforced edge states in non-Hermitian quantum spin Hall systems. We demonstrate that feedback can protect edge states and make them resilient against disorder, going beyond conventional symmetry-based protection. Our results open pathways for realizing robust non-Hermitian topological phenomena in more complex settings.
+              <p class="paper-desc">
+                Develops a feedback-based route to robust non-Hermitian edge states beyond conventional symmetry protection.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" rel="noopener">
                   Non-Hermitian strong bosonic clustering through interaction-induced caging
                 </a>
               </p>
-              <p class="text-slate-700">
+              <p class="paper-meta">
                 <strong>M. Yang</strong>,
-                <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=Luqi+Yuan" target="_blank" class="hover-link">L. Yuan</a>,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" class="hover-link">
-                  <em>Commun. Phys.</em> <strong>8</strong>, 388 (2025)
-                </a>.
+                <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=Luqi+Yuan" target="_blank" rel="noopener">L. Yuan</a>, and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                <span class="venue">Communications Physics</span> <strong>8</strong>, 388, 2025.
               </p>
-              <p class="text-slate-700">
-                In this paper, we propose a mechanism where non-Hermitian pumping, bosonic repulsion, and topological band effects combine to generate an emergent “cage” that traps bosons at the lattice edge. We show that this significantly enhances boundary clustering compared with interaction-induced trapping alone, and we discuss implications for future quantum memory and transport devices.
+              <p class="paper-desc">
+                Demonstrates strong boundary clustering of bosons through the interplay of non-Hermitian pumping, interactions, and topological band effects.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" rel="noopener">
                   Percolation-Induced Symmetry Breaking
                 </a>
               </p>
-              <p class="text-slate-700">
-                <strong>M. Yang</strong>,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" class="hover-link">
-                  <em>Phys. Rev. Lett.</em> <strong>133</strong>, 136602 (2024)
-                </a>.
+              <p class="paper-meta">
+                <strong>M. Yang</strong> and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                <span class="venue">Physical Review Letters</span> <strong>133</strong>, 136602, 2024.
               </p>
-              <p class="text-slate-700">
-                In this work, we introduce percolation as a mechanism that drives PT-symmetry breaking in non-Hermitian systems. We show how percolation transitions induce real-to-complex spectral changes, and we highlight how percolation can reshape dynamics in disordered settings, with potential relevance to feedback-controlled platforms.
+              <p class="paper-desc">
+                Establishes percolation as a mechanism for PT-symmetry breaking and real-to-complex spectral transitions in non-Hermitian systems.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" rel="noopener">
                   Topological non-Hermitian skin effect
                 </a>
               </p>
-              <p class="text-slate-700">
-                R. Lin, T. Tai, <strong>M. Yang</strong>, L. Li,
-                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" class="hover-link">C. H. Lee</a> —
-                <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" class="hover-link">
-                  <em>Front. Phys.</em> <strong>18</strong>, 53605 (2023)
-                </a>.
+              <p class="paper-meta">
+                R. Lin, T. Tai, <strong>M. Yang</strong>, L. Li, and
+                <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
+                <span class="venue">Frontiers of Physics</span> <strong>18</strong>, 53605, 2023.
               </p>
-              <p class="text-slate-700">
-                In this paper, we explore the topological non-Hermitian skin effect by identifying key physical mechanisms behind its emergence. We analyze how topology and non-Hermiticity intertwine to produce boundary accumulation, and we provide theoretical insights that help guide the understanding and design of topological non-Hermitian systems.
+              <p class="paper-desc">
+                Analyzes how topology and non-Hermiticity combine to generate boundary accumulation in non-Hermitian systems.
               </p>
             </li>
 
             <li>
-              <p class="font-semibold text-slate-900">
-                <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" class="hover-link">
+              <p class="paper-title">
+                <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" rel="noopener">
                   Concentrated subradiant modes in a 1D atomic array with chiral waveguides
                 </a>
               </p>
-              <p class="text-slate-700">
-                <strong>M. Yang</strong> et al. —
-                <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" class="hover-link">
-                  <em>Phys. Rev. A</em> <strong>106</strong>, 043717 (2022)
-                </a>.
+              <p class="paper-meta">
+                <strong>M. Yang</strong> et al.,
+                <span class="venue">Physical Review A</span> <strong>106</strong>, 043717, 2022.
               </p>
-              <p class="text-slate-700">
-                In this paper, we study a non-Hermitian atom–waveguide platform and show how a tilted 1D atomic array coupled to chiral waveguides gives rise to concentrated subradiant and superradiant modes. We demonstrate how skin-effect physics emerges in this open quantum setting, suggesting possibilities for quantum state storage and photon manipulation.
+              <p class="paper-desc">
+                Studies concentrated subradiant and superradiant modes in a non-Hermitian atom-waveguide platform.
               </p>
             </li>
           </ol>
         </section>
 
+        <section id="presentations">
+          <h2>Presentations</h2>
+          <p class="section-note">Selected talks and posters</p>
+
+          <ol class="presentation-list">
+            <li>
+              <p class="paper-title">Poster, <span class="venue">BLINH 2025</span></p>
+              <p class="paper-meta">Dec 2025, Erice, Sicily, Italy</p>
+              <p class="paper-desc">Percolation-induced PT-symmetry breaking.</p>
+            </li>
+
+            <li>
+              <p class="paper-title">Talk, <span class="venue">Max Planck Institute for the Science of Light</span></p>
+              <p class="paper-meta">Dec 2025, Erlangen, Germany</p>
+              <p class="paper-desc">Topological-guided gain and feedback-enforced edge dynamics in non-Hermitian systems.</p>
+            </li>
+
+            <li>
+              <p class="paper-title">Posters, <span class="venue">Quantum Connections</span></p>
+              <p class="paper-meta">Jun 2025, Stockholm, Sweden</p>
+              <p class="paper-desc">
+                Percolation-induced PT-symmetry breaking; Non-Hermitian strong bosonic clustering through interaction-induced caging.
+              </p>
+            </li>
+
+            <li>
+              <p class="paper-title">Talk, <span class="venue">IPS</span></p>
+              <p class="paper-meta">Sep 2024, Singapore</p>
+              <p class="paper-desc">Exceptional Bound Bands.</p>
+            </li>
+          </ol>
+        </section>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-slate-200 bg-white py-5">
-    <div class="max-w-5xl mx-auto px-5 sm:px-6 text-center text-[11px] text-slate-500">
-      © <span id="year"></span> Mengjie Yang · All rights reserved.
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Mengjie Yang
     </div>
   </footer>
 
   <script>
-    // Email to copy
     const EMAIL_TO_COPY = "mengjie.yang@u.nus.edu";
 
-    function setCopyStatusVisible(visible) {
-      const el = document.getElementById("copy-status");
-      if (!el) return;
-      el.classList.toggle("opacity-0", !visible);
-      el.classList.toggle("opacity-100", visible);
-    }
-
     async function copyEmail() {
+      const status = document.getElementById("copy-status");
+
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(EMAIL_TO_COPY);
         } else {
-          const ta = document.createElement("textarea");
-          ta.value = EMAIL_TO_COPY;
-          ta.style.position = "fixed";
-          ta.style.left = "-9999px";
-          ta.style.top = "-9999px";
-          document.body.appendChild(ta);
-          ta.focus();
-          ta.select();
+          const textarea = document.createElement("textarea");
+          textarea.value = EMAIL_TO_COPY;
+          textarea.style.position = "fixed";
+          textarea.style.left = "-9999px";
+          textarea.style.top = "-9999px";
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
           document.execCommand("copy");
-          document.body.removeChild(ta);
+          document.body.removeChild(textarea);
         }
-        setCopyStatusVisible(true);
-        setTimeout(() => setCopyStatusVisible(false), 1200);
-      } catch (e) {
-        // fail silently
+
+        status.classList.add("visible");
+        setTimeout(() => status.classList.remove("visible"), 1400);
+      } catch (error) {
+        window.location.href = "mailto:" + EMAIL_TO_COPY;
       }
     }
 
-    // footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
