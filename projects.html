@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Projects | Mengjie Yang</title>
+
+  <style>
+    :root {
+      --bg: #f5f2eb;
+      --card: #fffdf8;
+      --text: #263238;
+      --muted: #5f6f7a;
+      --light: #8a98a3;
+      --border: #d9e2e7;
+      --accent: #245c7c;
+      --accent-dark: #16384f;
+      --accent-soft: #e8f3f7;
+      --gold: #b08d57;
+      --gold-soft: #f5ebd8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 16px;
+      line-height: 1.68;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: linear-gradient(180deg, #fffdf8 0%, #f7fbfd 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      padding: 38px 0 26px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--accent-dark);
+    }
+
+    .subtitle {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+      min-width: 260px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #c9d7df;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--accent-dark);
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.18s ease;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      box-shadow: 0 1px 2px rgba(22, 56, 79, 0.06);
+    }
+
+    .button:hover {
+      background: var(--accent-soft);
+      border-color: #9fb8c7;
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    nav {
+      margin-top: 27px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    nav a {
+      font-weight: 600;
+    }
+
+    main {
+      padding: 38px 0 58px;
+    }
+
+    .intro {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 30px;
+      box-shadow: 0 4px 14px rgba(22, 56, 79, 0.045);
+      margin-bottom: 34px;
+    }
+
+    .intro h2 {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #36464f;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px 32px 32px;
+      box-shadow: 0 4px 14px rgba(22, 56, 79, 0.045);
+      scroll-margin-top: 24px;
+      margin-bottom: 36px;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-kicker {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 10px;
+      color: var(--light);
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .project-number {
+      color: var(--gold);
+    }
+
+    .publication-badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border: 1px solid #c9dfe8;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 700;
+    }
+
+    .preprint-badge {
+      background: var(--gold-soft);
+      border-color: #e2cfaa;
+      color: #7a5a21;
+    }
+
+    h2.project-title {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 25px;
+      line-height: 1.28;
+      letter-spacing: -0.01em;
+    }
+
+    .technical-title {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .project-body {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .project-body p {
+      margin: 0;
+    }
+
+    .label {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .paper-box {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border: 1px solid #e2d8c7;
+      background: #fffaf0;
+      border-radius: 13px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .paper-box strong {
+      color: var(--accent-dark);
+    }
+
+    .paper-box a {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .project-links {
+      margin-top: 16px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: #fffdf8;
+      padding: 18px 0;
+      text-align: center;
+      color: var(--light);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .top-row {
+        flex-direction: column;
+      }
+
+      .actions {
+        justify-content: flex-start;
+        min-width: 0;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .project-card,
+      .intro {
+        padding: 24px 22px;
+      }
+
+      h2.project-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="top-row">
+        <div>
+          <h1>Research Projects</h1>
+          <p class="subtitle">Mengjie Yang · Physics Ph.D. Candidate, National University of Singapore</p>
+        </div>
+
+        <div class="actions">
+          <a class="button" href="index.html">Home</a>
+          <a class="button" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="button" href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#presentations">Presentations</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#awards">Honors & Awards</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="intro">
+        <h2>Research overview</h2>
+        <p>
+          My work asks how open quantum and wave systems behave when particles, photons,
+          or collective modes can be amplified, damped, or transported directionally.
+          The projects below are written for a broad physics audience: each starts from
+          the physical question before moving to the non-Hermitian terminology.
+        </p>
+      </section>
+
+      <article class="project-card" id="scaling-topology">
+        <div class="project-kicker">
+          <span class="project-number">Project 1</span>
+          <span class="publication-badge">Published in Advanced Science, 2026</span>
+        </div>
+
+        <h2 class="project-title">Can the size of a system change its topology?</h2>
+        <p class="technical-title">Scaling-controlled non-Hermitian topology and exceptional-bound bands</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            In ordinary condensed matter systems, topology is usually treated as a property of the bulk Hamiltonian.
+            Changing the sample size may change finite-size corrections, but it normally does not define a new phase by itself.
+            This project asks whether that intuition can fail in open systems with gain, loss, or directional amplification.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            Non-Hermitian systems can have spectral degeneracies where both eigenvalues and eigenvectors coalesce.
+            Instead of treating these exceptional structures as isolated singular points, we studied situations where they form
+            extended band-like objects tied to the boundary response of a finite system.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            We showed that the system size itself can control a topological transition. In simple terms, the boundary does not
+            merely reveal a pre-existing bulk topology; the scaling of the finite system can actively reshape the spectral
+            structure that defines the topological behavior.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This gives a way to think about topology in platforms where the effective Hamiltonian is not Hermitian, such as
+            photonic, circuit, mechanical, and driven-dissipative quantum systems. It also makes finite-size behavior part of
+            the physics rather than a nuisance to be extrapolated away.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated paper:</strong>
+          <a href="https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/advs.202523989" target="_blank" rel="noopener">
+            Beyond the Non-Hermitian Skin Effect: Scaling-Controlled Topology from Exceptional-Bound Bands
+          </a>, <em>Advanced Science</em>, 2026.
+          DOI: <a href="https://doi.org/10.1002/advs.202523989" target="_blank" rel="noopener">10.1002/advs.202523989</a>.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="transverse-switch">
+        <div class="project-kicker">
+          <span class="project-number">Project 2</span>
+          <span class="publication-badge">Published in Communications Physics, 2026</span>
+        </div>
+
+        <h2 class="project-title">Can boundary accumulation be reversed without changing the local couplings?</h2>
+        <p class="technical-title">Transverse control of non-Hermitian skin accumulation</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            In many non-Hermitian lattices, eigenmodes pile up near one boundary. This boundary piling-up is known as the
+            non-Hermitian skin effect. The usual expectation is that the accumulation direction is fixed once the asymmetric
+            hopping pattern is fixed.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            We asked whether a transverse degree of freedom can act as a switch. Instead of changing the microscopic hopping
+            along the main direction, we changed how chains are coupled across the transverse direction and how the transverse
+            boundary is closed or opened.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            The skin accumulation can be reversed by transverse size and boundary control. In lay terms, the system can be made
+            to pile up on the opposite side even though the local directional bias along the chain has not simply been inverted.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This shows that non-Hermitian boundary responses are not only local properties of a hopping direction. Geometry,
+            dimensionality, and boundary conditions can provide an additional control knob, which is useful for designing
+            non-Hermitian photonic, circuit, or synthetic-lattice devices.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated paper:</strong>
+          <a href="https://www.nature.com/articles/s42005-026-02608-5" target="_blank" rel="noopener">
+            Reversing non-Hermitian skin accumulation with a non-local transverse switch
+          </a>, <em>Communications Physics</em> <strong>9</strong>, 210, 2026.
+          DOI: <a href="https://doi.org/10.1038/s42005-026-02608-5" target="_blank" rel="noopener">10.1038/s42005-026-02608-5</a>.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="feedback-edge">
+        <div class="project-kicker">
+          <span class="project-number">Project 3</span>
+          <span class="publication-badge preprint-badge">Preprint on arXiv, 2025</span>
+        </div>
+
+        <h2 class="project-title">Can edge transport be stabilized without ordinary symmetry protection?</h2>
+        <p class="technical-title">Feedback-enforced edge states in stacked quantum spin Hall systems</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            Topological edge states are usually robust because a symmetry or a topological invariant protects them. But if two
+            quantum spin Hall layers are strongly coupled, the conventional expectation is that the edge modes can annihilate
+            and the combined system becomes topologically trivial.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            We explored whether non-Hermitian dynamics can provide a different type of robustness. Instead of relying on symmetry
+            protection, the system uses directed amplification and suppression: bulk excitations are not favored, while edge
+            motion is dynamically reinforced.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            In an intermediate coupling regime, generic bulk excitations are redirected into helical edge transport. The robustness
+            therefore comes from a feedback-like dynamical mechanism rather than from the usual symmetry-protected classification.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This connects topological physics to control and amplification. It suggests that in open systems, one may design
+            protected-looking edge behavior even when the static Hermitian topological invariant alone would predict no protected
+            edge state.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated paper:</strong>
+          <a href="https://arxiv.org/abs/2507.17295" target="_blank" rel="noopener">
+            Beyond symmetry protection: Robust feedback-enforced edge states in non-Hermitian stacked quantum spin Hall systems
+          </a>, arXiv:2507.17295, 2025.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="bosonic-clustering">
+        <div class="project-kicker">
+          <span class="project-number">Project 4</span>
+          <span class="publication-badge">Published in Communications Physics, 2025</span>
+        </div>
+
+        <h2 class="project-title">How can interactions make bosons cluster strongly in an open system?</h2>
+        <p class="technical-title">Interaction-induced caging and non-Hermitian bosonic clustering</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            Bosons tend to occupy the same state, but strong and spatially structured clustering is not automatic. This project
+            asks how interactions, lattice geometry, and non-Hermitian dynamics can combine to concentrate many-body states in
+            a highly non-uniform way.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            The system contains an effective caging mechanism: particles are not simply free to spread across the lattice.
+            Interactions and non-Hermitian pumping reshape the accessible many-body motion, causing particles to become trapped
+            or concentrated in particular regions of configuration space and real space.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            We found strong bosonic clustering driven by the combined effect of interaction-induced caging and non-Hermitian
+            dynamics. The clustering is a many-body phenomenon, not just a single-particle boundary accumulation copied many times.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This project connects non-Hermitian physics with many-body dynamics. It is relevant to quantum simulators,
+            photonic platforms, and driven-dissipative settings where interactions and loss/gain cannot be treated as small
+            perturbations.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated paper:</strong>
+          <a href="https://www.nature.com/articles/s42005-025-02274-z" target="_blank" rel="noopener">
+            Non-Hermitian strong bosonic clustering through interaction-induced caging
+          </a>, <em>Communications Physics</em> <strong>8</strong>, 388, 2025.
+          DOI: <a href="https://doi.org/10.1038/s42005-025-02274-z" target="_blank" rel="noopener">10.1038/s42005-025-02274-z</a>.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="percolation-pt">
+        <div class="project-kicker">
+          <span class="project-number">Project 5</span>
+          <span class="publication-badge">Published in Physical Review Letters, 2024</span>
+        </div>
+
+        <h2 class="project-title">Can a classical connectivity transition break a spectral symmetry?</h2>
+        <p class="technical-title">Percolation-induced PT symmetry breaking</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            Percolation is a basic problem in statistical physics: as more bonds or sites are added, small disconnected clusters
+            suddenly form a system-spanning network. PT symmetry breaking, by contrast, is usually discussed as a spectral
+            transition in systems with balanced gain and loss. This project asks whether these two ideas can be directly linked.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            We designed a non-Hermitian setting where the long-time dynamics depends on how connected the underlying random
+            structure is. Below and above the percolation threshold, the effective gain/loss pathways are organized differently.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            The percolation transition can drive PT symmetry breaking. Equivalently, a change in network connectivity can move
+            the spectrum from a real regime into a complex regime, making a geometric/statistical transition visible as a
+            non-Hermitian spectral transition.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This gives a bridge between disordered statistical mechanics and open-system spectral physics. It suggests that
+            connectivity, disorder, and topology can be used to control when gain/loss systems become dynamically unstable.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated paper:</strong>
+          <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" rel="noopener">
+            Percolation-Induced PT Symmetry Breaking
+          </a>, <em>Physical Review Letters</em> <strong>133</strong>, 136602, 2024.
+          DOI: <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" rel="noopener">10.1103/PhysRevLett.133.136602</a>.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="early-open-systems">
+        <div class="project-kicker">
+          <span class="project-number">Project 6</span>
+          <span class="publication-badge">Published in Frontiers of Physics and Physical Review A</span>
+        </div>
+
+        <h2 class="project-title">How do open-system effects localize collective modes?</h2>
+        <p class="technical-title">Subradiance, chiral waveguides, and topological non-Hermitian skin effects</p>
+
+        <div class="project-body">
+          <p>
+            <span class="label">Physical question.</span>
+            In open optical and atomic systems, modes can radiate at very different rates. Some modes radiate strongly, while
+            subradiant modes couple weakly to the environment and can live much longer. This project line asks how such open-system
+            effects interact with directional transport and boundary localization.
+          </p>
+
+          <p>
+            <span class="label">Main idea.</span>
+            A chiral waveguide can mediate directional, long-range couplings between atoms. These couplings produce an effective
+            non-Hermitian lattice, where collective atomic excitations are shaped by both radiation and asymmetric transport.
+          </p>
+
+          <p>
+            <span class="label">Result.</span>
+            In the atom-waveguide work, subradiant modes concentrate near an interface, while superradiant modes remain more
+            extended. In the review work, we summarized how topology and non-Hermitian skin effects combine to produce boundary
+            accumulation beyond ordinary Hermitian bulk-boundary correspondence.
+          </p>
+
+          <p>
+            <span class="label">Why it matters.</span>
+            This project line formed the bridge from quantum optics and open systems to my later work on non-Hermitian topology,
+            boundary response, and many-body dynamics.
+          </p>
+        </div>
+
+        <div class="paper-box">
+          <strong>Associated papers:</strong><br />
+          <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" rel="noopener">
+            Topological non-Hermitian skin effect
+          </a>, <em>Frontiers of Physics</em> <strong>18</strong>, 53605, 2023.<br />
+          <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" rel="noopener">
+            Concentrated subradiant modes in a one-dimensional atomic array coupled with chiral waveguides
+          </a>, <em>Physical Review A</em> <strong>106</strong>, 043717, 2022.
+        </div>
+
+        <div class="project-links">
+          <a href="index.html#publications">Back to publications</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Mengjie Yang · Last updated: June 2026
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
