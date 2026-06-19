@@ -94,7 +94,7 @@
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 10px;
-      min-width: 270px;
+      min-width: 300px;
     }
 
     .button {
@@ -298,10 +298,11 @@
       font-size: 15px;
     }
 
-    .paper-desc {
+    .paper-links {
       margin-top: 6px;
-      color: #36464f;
-      font-size: 15px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .venue {
@@ -377,6 +378,7 @@
         <div class="actions">
           <button class="button" type="button" onclick="copyEmail()">Email</button>
           <a class="button" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="button" href="projects.html">Projects</a>
           <a class="button" href="https://scholar.google.com/citations?user=nuosmYQAAAAJ&hl=en" target="_blank" rel="noopener">
             Google Scholar
           </a>
@@ -389,6 +391,7 @@
 
       <nav>
         <a href="#about">About</a>
+        <a href="projects.html">Research Projects</a>
         <a href="#publications">Publications</a>
         <a href="#presentations">Presentations</a>
         <a href="#education">Education</a>
@@ -403,19 +406,26 @@
         <section id="about">
           <h2 class="small-heading">About</h2>
           <p>
-            I study how non-Hermiticity, topology, and interactions reshape spectra,
-            localization, and dynamics in open quantum systems. My doctoral work has
-            focused on non-Hermitian skin effects, exceptional spectral structures,
-            feedback-enforced edge states, and many-body clustering phenomena.
+            I study open quantum and wave systems where gain, loss, dissipation,
+            and non-reciprocal dynamics reshape spectra, localization, topology,
+            and collective behavior.
           </p>
 
           <p class="paragraph-gap">
-            I am currently looking for postdoctoral opportunities starting in 2027.
-            For my postdoctoral work, I am interested in broadening my research direction
-            toward condensed matter theory, quantum many-body physics, open quantum systems,
-            topological phases, nonequilibrium dynamics, and quantum information-related
-            problems.
+            I am currently looking for postdoctoral opportunities starting in 2027,
+            with broad interests in condensed matter theory, quantum many-body physics,
+            open quantum systems, topology, and nonequilibrium dynamics.
           </p>
+        </section>
+
+        <section>
+          <h2 class="small-heading">Research Interests</h2>
+          <ul class="compact-list">
+            <li>Open and non-Hermitian quantum systems</li>
+            <li>Topological phases and boundary phenomena</li>
+            <li>Quantum many-body dynamics</li>
+            <li>Nonequilibrium and dissipative physics</li>
+          </ul>
         </section>
 
         <section id="education">
@@ -472,7 +482,9 @@
       <div class="main-col">
         <section id="publications">
           <h2>Publications</h2>
-          <p class="section-note">Selected publications and preprints</p>
+          <p class="section-note">
+            Selected publications and preprints. See <a href="projects.html">Research Projects</a> for broader explanations of the physics questions.
+          </p>
 
           <ol class="pub-list">
             <li>
@@ -484,15 +496,10 @@
               <p class="paper-meta">
                 <strong>M. Yang</strong> and
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
-                <span class="venue">Advanced Science</span>, e23989, 2026.
-                DOI:
-                <a href="https://doi.org/10.1002/advs.202523989" target="_blank" rel="noopener">
-                  10.1002/advs.202523989
-                </a>.
+                <span class="venue">Advanced Science</span>, 2026.
+                DOI: <a href="https://doi.org/10.1002/advs.202523989" target="_blank" rel="noopener">10.1002/advs.202523989</a>.
               </p>
-              <p class="paper-desc">
-                Introduces exceptional-bound-band engineering as a mechanism for size-controlled topological transitions in non-Hermitian systems.
-              </p>
+              <p class="paper-links"><a href="projects.html#scaling-topology">Project overview</a></p>
             </li>
 
             <li>
@@ -504,15 +511,10 @@
               <p class="paper-meta">
                 <strong>M. Yang</strong> and
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
-                <span class="venue">Communications Physics</span>, 2026.
-                DOI:
-                <a href="https://doi.org/10.1038/s42005-026-02608-5" target="_blank" rel="noopener">
-                  10.1038/s42005-026-02608-5
-                </a>.
+                <span class="venue">Communications Physics</span> <strong>9</strong>, 210, 2026.
+                DOI: <a href="https://doi.org/10.1038/s42005-026-02608-5" target="_blank" rel="noopener">10.1038/s42005-026-02608-5</a>.
               </p>
-              <p class="paper-desc">
-                Shows that non-Hermitian skin accumulation can be reversed through transverse size and boundary control.
-              </p>
+              <p class="paper-links"><a href="projects.html#transverse-switch">Project overview</a></p>
             </li>
 
             <li>
@@ -527,9 +529,7 @@
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
                 arXiv:2507.17295, 2025.
               </p>
-              <p class="paper-desc">
-                Develops a feedback-based route to robust non-Hermitian edge states beyond conventional symmetry protection.
-              </p>
+              <p class="paper-links"><a href="projects.html#feedback-edge">Project overview</a></p>
             </li>
 
             <li>
@@ -543,26 +543,24 @@
                 <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=Luqi+Yuan" target="_blank" rel="noopener">L. Yuan</a>, and
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
                 <span class="venue">Communications Physics</span> <strong>8</strong>, 388, 2025.
+                DOI: <a href="https://doi.org/10.1038/s42005-025-02274-z" target="_blank" rel="noopener">10.1038/s42005-025-02274-z</a>.
               </p>
-              <p class="paper-desc">
-                Demonstrates strong boundary clustering of bosons through the interplay of non-Hermitian pumping, interactions, and topological band effects.
-              </p>
+              <p class="paper-links"><a href="projects.html#bosonic-clustering">Project overview</a></p>
             </li>
 
             <li>
               <p class="paper-title">
                 <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" rel="noopener">
-                  Percolation-Induced Symmetry Breaking
+                  Percolation-Induced PT Symmetry Breaking
                 </a>
               </p>
               <p class="paper-meta">
                 <strong>M. Yang</strong> and
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
                 <span class="venue">Physical Review Letters</span> <strong>133</strong>, 136602, 2024.
+                DOI: <a href="https://doi.org/10.1103/PhysRevLett.133.136602" target="_blank" rel="noopener">10.1103/PhysRevLett.133.136602</a>.
               </p>
-              <p class="paper-desc">
-                Establishes percolation as a mechanism for PT-symmetry breaking and real-to-complex spectral transitions in non-Hermitian systems.
-              </p>
+              <p class="paper-links"><a href="projects.html#percolation-pt">Project overview</a></p>
             </li>
 
             <li>
@@ -575,25 +573,23 @@
                 R. Lin, T. Tai, <strong>M. Yang</strong>, L. Li, and
                 <a href="https://scholar.google.com/citations?user=V6G3Uc8AAAAJ&hl=en" target="_blank" rel="noopener">C. H. Lee</a>,
                 <span class="venue">Frontiers of Physics</span> <strong>18</strong>, 53605, 2023.
+                DOI: <a href="https://doi.org/10.1007/s11467-023-1309-z" target="_blank" rel="noopener">10.1007/s11467-023-1309-z</a>.
               </p>
-              <p class="paper-desc">
-                Analyzes how topology and non-Hermiticity combine to generate boundary accumulation in non-Hermitian systems.
-              </p>
+              <p class="paper-links"><a href="projects.html#early-open-systems">Project overview</a></p>
             </li>
 
             <li>
               <p class="paper-title">
                 <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" rel="noopener">
-                  Concentrated subradiant modes in a 1D atomic array with chiral waveguides
+                  Concentrated subradiant modes in a one-dimensional atomic array coupled with chiral waveguides
                 </a>
               </p>
               <p class="paper-meta">
                 <strong>M. Yang</strong> et al.,
                 <span class="venue">Physical Review A</span> <strong>106</strong>, 043717, 2022.
+                DOI: <a href="https://doi.org/10.1103/PhysRevA.106.043717" target="_blank" rel="noopener">10.1103/PhysRevA.106.043717</a>.
               </p>
-              <p class="paper-desc">
-                Studies concentrated subradiant and superradiant modes in a non-Hermitian atom-waveguide platform.
-              </p>
+              <p class="paper-links"><a href="projects.html#early-open-systems">Project overview</a></p>
             </li>
           </ol>
         </section>
@@ -606,27 +602,21 @@
             <li>
               <p class="paper-title">Poster, <span class="venue">BLINH 2025</span></p>
               <p class="paper-meta">Dec 2025, Erice, Sicily, Italy</p>
-              <p class="paper-desc">Percolation-induced PT-symmetry breaking.</p>
             </li>
 
             <li>
               <p class="paper-title">Talk, <span class="venue">Max Planck Institute for the Science of Light</span></p>
               <p class="paper-meta">Dec 2025, Erlangen, Germany</p>
-              <p class="paper-desc">Topological-guided gain and feedback-enforced edge dynamics in non-Hermitian systems.</p>
             </li>
 
             <li>
               <p class="paper-title">Posters, <span class="venue">Quantum Connections</span></p>
               <p class="paper-meta">Jun 2025, Stockholm, Sweden</p>
-              <p class="paper-desc">
-                Percolation-induced PT-symmetry breaking; Non-Hermitian strong bosonic clustering through interaction-induced caging.
-              </p>
             </li>
 
             <li>
               <p class="paper-title">Talk, <span class="venue">IPS</span></p>
               <p class="paper-meta">Sep 2024, Singapore</p>
-              <p class="paper-desc">Exceptional Bound Bands.</p>
             </li>
           </ol>
         </section>
@@ -636,7 +626,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Mengjie Yang
+      © <span id="year"></span> Mengjie Yang · Last updated: June 2026
     </div>
   </footer>
 
